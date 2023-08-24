@@ -1,3 +1,6 @@
+#keep candle standalone
+candle
+
 #don't check in pretrained models
 resnet18.ot
 *.ot
