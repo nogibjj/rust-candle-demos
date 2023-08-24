@@ -1,6 +1,6 @@
-install:
-	python3 -m pip install --upgrade pip \
-		&& pip install -r requirements.txt
+verify:
+	nvidia-smi --query-gpu=compute_cap --format=csv
+
 format:
 	cargo fmt --quiet
 
@@ -11,9 +11,6 @@ test:
 	cargo test --quiet
 
 clean:
-	#cargo install cargo-cache
-	#cargo cache -a
-	#rm -rf Cargo.lock
 	cargo clean
 
 run:
