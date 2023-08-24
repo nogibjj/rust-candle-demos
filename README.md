@@ -1,7 +1,2 @@
 ### Hugging Face Candle Demos
 
-
-
-
-
-
