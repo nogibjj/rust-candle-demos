@@ -154,6 +154,7 @@ One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](ht
 * Open the candle folder in VS Code after setting up SSH
 
 
+![Screenshot 2023-08-25 at 4 57 10 PM](https://github.com/nogibjj/rust-candle-demos/assets/58792/6f57943f-7665-48f6-b582-fbc2f7325835)
 
 
 ### Notes to get NVCC installed
