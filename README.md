@@ -11,9 +11,11 @@ cargo run --features cuda --example bert --release
 ### Invoke an LLM for Starcoder
 
 Run starcoder:
-    * Checkout the repo: `git clone https://github.com/huggingface/candle.git`
-    * cd into candle
-    * `cargo run --example bigcode --release`
+  * Checkout the repo: `git clone https://github.com/huggingface/candle.git`
+  * cd into candle
+  * `cargo run --features cuda --example bigcode --release -- --prompt "python function that adds two numbers"`
+
+
 
 #### Troubleshooting
 
