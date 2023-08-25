@@ -150,6 +150,8 @@ One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](ht
 * Select the Deep Learning Base AMI (Ubuntu)
 * SSH and setup rust via [Rustup](https://rustup.rs/)  
 * clone candle:  `git clone https://github.com/huggingface/candle.git`
+* Install [VS Code SSH-Remote plugin](https://code.visualstudio.com/docs/remote/ssh)
+* Open the candle folder in VS Code after setting up SSH
 
 
 
