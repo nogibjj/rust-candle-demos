@@ -1,5 +1,9 @@
 ### Hugging Face Candle Demos
 
+
+![4 1-candle-framework-rust](https://github.com/nogibjj/rust-candle-demos/assets/58792/1b90a2e5-1343-4088-aab3-ce08134ee384)
+
+
 ### Installation (GPU works for most)
 
 * Follow steps from [Hugging Face](https://huggingface.github.io/candle/guide/installation.html)
