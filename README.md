@@ -133,11 +133,25 @@ marco_polo(x=1, y=2, z=3)
 
 ```
 
+### Inference on AWS
+
+One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).
+
+
 
 ### References
 
 * [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
 * [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
+
+#### Steps to Run on AWS
+
+* Launch an Accelerated Computing instance
+* Select the Deep Learning Base AMI (Ubuntu)
+* SSH and setup rust via [Rustup](https://rustup.rs/)  
+* clone candle:  `git clone https://github.com/huggingface/candle.git`
+
+
 
 
 ### Notes to get NVCC installed
