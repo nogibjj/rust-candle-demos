@@ -9,7 +9,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && apt-get -y install --no-install-recommends \
    ffmpeg \ 
    gcc \
-   pciutils
+   pciutils \
+   cuda-nvcc-12-2 \
+   cuda-toolkit-12-2
 
 #create global virtual environment using python standard library tools of virtualenv
 ARG USER="codespace"
