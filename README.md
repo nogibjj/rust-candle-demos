@@ -29,6 +29,25 @@ See this [issue](https://github.com/huggingface/candle/issues/350)
 
 ### Invoke an LLM for Falcon
 
+### CUDA Falcon
+
+cargo run --features cuda --example falcon --release -- --prompt "What is the best type of Apple to eat"?  
+
+This is an error
+```
+   Compiling candle-examples v0.1.3 (/workspaces/rust-candle-demos/candle/candle-examples)
+    Finished release [optimized] target(s) in 6.23s
+     Running `target/release/examples/falcon --prompt 'What is the best type of Apple to eat?'`
+tokenizer.json [00:00:00] [████████████████████████████████████████████████████████████████] 2.61 MiB/2.61 MiB 31.24 MiB/s (0s)
+..del-00001-of-00002.safetensors [00:00:32] [█████████████████████████████████████████████] 9.27 GiB/9.27 GiB 295.19 MiB/s (0s)
+..del-00002-of-00002.safetensors [00:00:16] [██████████████████████████████████████████████████████████████████████████████████████] 4.18 GiB/4.18 GiB 261.20 MiB/s (0s)retrieved the files in 81.9103885s
+loaded the model in 8.3061299s
+starting the inference loop
+Error: DriverError(CUDA_ERROR_NOT_FOUND, "named symbol not found") when loading is_u32_bf16
+
+```
+
+
 This works...
 ```
 RUST_BACKTRACE=1 && cargo run --example falcon --release -- --prompt "which 100m sprinter won the 1984 olympics"? --use-f32
