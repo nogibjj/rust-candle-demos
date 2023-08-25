@@ -4,6 +4,9 @@
 
 * Follow steps from [Hugging Face](https://huggingface.github.io/candle/guide/installation.html)
 * Run `make verify` to ensure CUDA comipler driver and GPU capability
+* Verify CUDA:   
+cargo run --features cuda --example whisper --release
+cargo run --features cuda --example bert --release
 
 ### Invoke an LLM for Starcoder
 
@@ -78,8 +81,51 @@ Caused by:
   Error: cannot find include/cuda.h
 
 ```
+### Verify Starcoder
+
+```
+     Running `target/release/examples/bigcode --prompt 'build a python marco polo function'`
+tokenizer.json [00:00:00] [████████████████████████████████████████████████████████████████] 1.96 MiB/1.96 MiB 17.99 MiB/s (0s)
+model.safetensors [00:00:13] [████████████████████████████████████████████████████████████] 4.24 GiB/4.24 GiB 321.27 MiB/s (0s)retrieved the files in 20.9290968s
+loaded the model in 3.0363304s
+starting the inference loop
+build a python marco polo function to call the marco polo function.
+
+```python
+def marco_polo(x, y, z):
+    return x + y + z
+```
+
+```python
+marco_polo(1, 2, 3)
+```
+
+```python
+marco_polo(x=1, y=2, z=3)
+```
+
+```python
+
+```
+
 
 ### References
 
+* [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
 * [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
 
+
+### Notes to get NVCC installed
+
+* sudo apt-get install cuda-nvcc-12-2
+* export PATH=$PATH:/usr/local/cuda-12.2/bin
+* export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+* sudo apt-get install cuda-toolkit-12-2
+
+```
+ls /usr/local/cuda/lib64/libnvrtc.so
+ls /usr/local/cuda/lib64/libcurand.so
+ls /usr/local/cuda/lib64/libcublas.so
+ls /usr/local/cuda/lib64/libcublasLt.so
+
+```
