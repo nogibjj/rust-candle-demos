@@ -140,7 +140,7 @@ One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](ht
 
 #### Steps to Run on AWS
 
-* Launch an Accelerated Computing instance
+* Launch an [Accelerated Computing instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html)
 * Select the Deep Learning Base AMI (Ubuntu)
 * SSH and setup rust via [Rustup](https://rustup.rs/)  
 * clone candle:  `git clone https://github.com/huggingface/candle.git`
