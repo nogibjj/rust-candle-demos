@@ -138,12 +138,6 @@ marco_polo(x=1, y=2, z=3)
 One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).
 
 
-
-### References
-
-* [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
-* [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
-
 #### Steps to Run on AWS
 
 * Launch an Accelerated Computing instance
@@ -152,7 +146,6 @@ One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](ht
 * clone candle:  `git clone https://github.com/huggingface/candle.git`
 * Install [VS Code SSH-Remote plugin](https://code.visualstudio.com/docs/remote/ssh)
 * Open the candle folder in VS Code after setting up SSH
-
 
 ![Screenshot 2023-08-25 at 4 57 10 PM](https://github.com/nogibjj/rust-candle-demos/assets/58792/6f57943f-7665-48f6-b582-fbc2f7325835)
 
@@ -171,3 +164,10 @@ ls /usr/local/cuda/lib64/libcublas.so
 ls /usr/local/cuda/lib64/libcublasLt.so
 
 ```
+
+### References
+
+* [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
+* [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
+* [Serverless Hosting Hugging Face](https://aws.amazon.com/blogs/compute/hosting-hugging-face-models-on-aws-lambda/)
+
