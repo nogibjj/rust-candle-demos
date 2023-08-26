@@ -137,7 +137,7 @@ marco_polo(x=1, y=2, z=3)
 
 ### Inference on AWS
 
-One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).
+One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).  A good price point for performance is the [G5 Instance Type](https://aws.amazon.com/ec2/instance-types/g5/)
 
 [![Inference on AWS via Remote SSH and VS Code](https://img.youtube.com/vi/dSPQtZaQ-BE/0.jpg)](https://youtu.be/dSPQtZaQ-BE)
 
