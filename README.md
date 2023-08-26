@@ -14,6 +14,8 @@ cargo run --features cuda --example bert --release
 
 This repo contains a pre-configured [GitHub .devcontainer](https://github.com/nogibjj/rust-candle-demos/tree/main/.devcontainer) that sets up CUDA for you.  It utilizes the [features shown here](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace).
 
+[![Watch A Demo of Using GitHub Codespaces with Rust Candle](https://img.youtube.com/vi/ALqw6vfottY/0.jpg)](https://youtu.be/ALqw6vfottY)
+
 ### Invoke an LLM for Starcoder
 
 Run starcoder:
