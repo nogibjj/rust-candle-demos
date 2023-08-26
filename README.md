@@ -23,8 +23,6 @@ Run starcoder:
   * cd into candle
   * `cargo run --features cuda --example bigcode --release -- --prompt "python function that adds two numbers"`
 
-
-
 #### Troubleshooting
 
 Necessary for Starcoder model:
@@ -140,6 +138,8 @@ marco_polo(x=1, y=2, z=3)
 ### Inference on AWS
 
 One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).
+
+[![Inference on AWS via Remote SSH and VS Code](https://img.youtube.com/vi/dSPQtZaQ-BE/0.jpg)](https://youtu.be/dSPQtZaQ-BE)
 
 
 #### Steps to Run on AWS
