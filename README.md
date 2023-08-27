@@ -33,6 +33,10 @@ Run starcoder:
   * cd into candle
   * `cargo run --features cuda --example bigcode --release -- --prompt "python function that adds two numbers"`
 
+[![Exploring Hugging Face Starcoder in Rust](https://img.youtube.com/vi/g7WGCU3YSXc/0.jpg)](https://youtu.be/g7WGCU3YSXc)
+
+
+
 #### Troubleshooting
 
 Necessary for Starcoder model:
