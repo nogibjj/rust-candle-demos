@@ -16,6 +16,12 @@ This repo contains a pre-configured [GitHub .devcontainer](https://github.com/no
 
 [![Watch A Demo of Using GitHub Codespaces with Rust Candle](https://img.youtube.com/vi/ALqw6vfottY/0.jpg)](https://youtu.be/ALqw6vfottY)
 
+### Developing in Rust
+
+* Follow Guide Here:  https://huggingface.github.io/candle/guide/installation.html
+* [![Rust Hugging Face Candle Hello World CUDA](https://img.youtube.com/vi/5vFPlv6M9Cs/0.jpg)](https://youtu.be/5vFPlv6M9Cs)
+
+
 ### Invoke an LLM for Starcoder
 
 Run starcoder:
