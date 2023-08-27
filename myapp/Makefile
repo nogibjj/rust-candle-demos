@@ -3,6 +3,9 @@ verify:
 	nvidia-smi --query-gpu=compute_cap --format=csv
 	#shows Cuda compiler driver version
 	nvcc --version
+	
+build:
+	cargo build
 
 format:
 	cargo fmt --quiet
