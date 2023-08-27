@@ -12,6 +12,10 @@
 cargo run --features cuda --example whisper --release
 cargo run --features cuda --example bert --release
 
+This repo contains a pre-configured [GitHub .devcontainer](https://github.com/nogibjj/rust-candle-demos/tree/main/.devcontainer) that sets up CUDA for you.  It utilizes the [features shown here](https://docs.github.com/en/enterprise-cloud@latest/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace).
+
+[![Watch A Demo of Using GitHub Codespaces with Rust Candle](https://img.youtube.com/vi/ALqw6vfottY/0.jpg)](https://youtu.be/ALqw6vfottY)
+
 ### Invoke an LLM for Starcoder
 
 Run starcoder:
@@ -131,11 +135,23 @@ marco_polo(x=1, y=2, z=3)
 
 ```
 
+### Inference on AWS
 
-### References
+One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html), then remotely talk to it via VSCode + SSH.  For Rust, a good choice is the [Deep Learning Base AMI](https://docs.aws.amazon.com/dlami/latest/devguide/overview-base.html).  A good price point for performance is the [G5 Instance Type](https://aws.amazon.com/ec2/instance-types/g5/)
 
-* [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
-* [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
+[![Inference on AWS via Remote SSH and VS Code](https://img.youtube.com/vi/dSPQtZaQ-BE/0.jpg)](https://youtu.be/dSPQtZaQ-BE)
+
+
+#### Steps to Run on AWS
+
+* Launch an [Accelerated Computing instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html)
+* Select the Deep Learning Base AMI (Ubuntu)
+* SSH and setup rust via [Rustup](https://rustup.rs/)  
+* clone candle:  `git clone https://github.com/huggingface/candle.git`
+* Install [VS Code SSH-Remote plugin](https://code.visualstudio.com/docs/remote/ssh)
+* Open the candle folder in VS Code after setting up SSH
+
+![Screenshot 2023-08-25 at 4 57 10 PM](https://github.com/nogibjj/rust-candle-demos/assets/58792/6f57943f-7665-48f6-b582-fbc2f7325835)
 
 
 ### Notes to get NVCC installed
@@ -152,3 +168,10 @@ ls /usr/local/cuda/lib64/libcublas.so
 ls /usr/local/cuda/lib64/libcublasLt.so
 
 ```
+
+### References
+
+* [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
+* [HUGGING_FACE_HUB_TOKEN](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables)
+* [Serverless Hosting Hugging Face](https://aws.amazon.com/blogs/compute/hosting-hugging-face-models-on-aws-lambda/)
+
