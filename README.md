@@ -71,7 +71,7 @@ This works...
 RUST_BACKTRACE=1 && cargo run --example falcon --release -- --prompt "which 100m sprinter won the 1984 olympics"? --use-f32
 ```
 
-This does not...
+This does not...because the box running this only has a <8 cap GPU.
 
 ```
 codespace@codespaces-f226cf:/workspaces/rust-candle-demos/candle$ RUST_BACKTRACE=1 && cargo run --example falcon --release -- --prompt "which 100m sprinter won the 1984 olympics"? --features cuda
