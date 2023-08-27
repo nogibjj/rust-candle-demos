@@ -183,6 +183,11 @@ ls /usr/local/cuda/lib64/libcublasLt.so
 
 ```
 
+### Potential Development and Deployment Architecture
+
+![4 7-exploring-remote-dev-aws](https://github.com/nogibjj/rust-candle-demos/assets/58792/5d524446-8017-42a9-9899-56eb9a4565f1)
+
+
 ### References
 
 * [GitHub CodeSpaces CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning)
