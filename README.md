@@ -19,8 +19,6 @@ Run starcoder:
   * cd into candle
   * `cargo run --features cuda --example bigcode --release -- --prompt "python function that adds two numbers"`
 
-
-
 #### Troubleshooting
 
 Necessary for Starcoder model:
