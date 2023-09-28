@@ -188,58 +188,61 @@ ls /usr/local/cuda/lib64/libcublasLt.so
 
 ### AWS binary codebuild
 
+* below is the code to run the whisper model with samples_hp0.wav example 
+  
+  ```
+   cargo run --features cuda --example whisper --release -- --input ../whisper/wav/samples_hp0.wav
+  ```
+if success, you should get the following:
 
-below is the code to run the whisper model with samples_hp0.wav example 
-
-```
- cargo run --features cuda --example whisper --release -- --input ../whisper/wav/samples_hp0.wav
-```
+![Screenshot 2023-09-27 at 9 21 36 PM](https://github.com/nogibjj/rust-candle-demos/assets/43226003/5bcbb574-3b77-469d-a8d9-f73db3797a48)
 
 ### Step 1: Compile the Rust Program Locally
-Run the following command to compile the Rust application. This will generate an executable file under ./target/release/.
+* Run the following command to compile the Rust application. This will generate an executable file under ./target/release/.
+  
+  ```
+  cargo build --features cuda --release
+  ```
 
-```
-cargo build --features cuda --release
-```
+* or if you wanna build the single LLM, for example whisper
 
-or if you wanna build the single LLM, for example whisper
+  ```
+  cargo build --features cuda --example whisper --release
+  ```
 
-```
-cargo build --features cuda --example whisper --release
-```
-
-and you can run the binary before you process it into s3.
+* and you can run the binary before you process it into s3.
 
 1. Get into the binary forder, usually in "./target/release/examples"
 2. run the following code
-```
-./whisper --input ../../../../whisper/wav/samples_hp0.wav 
-```
+  
+  ```
+  ./whisper --input ../../../../whisper/wav/samples_hp0.wav 
+  ```
 > note the ../../../../whisper/wav/samples_hp0.wav is where the example wav file saved. you can skip this if your test model don't need any test file. 
 
 ### Step 3: Upload the Binary to AWS S3
 
 1. Configure AWS CLI:
-```
-aws configure
-```
+  ```
+  aws configure
+  ```
 
 2. Go to the binary forder:
-```
-cd ./target/release/examples/whisper #Your_model_binary_name
-```
+  ```
+  cd ./target/release/examples/whisper #Your_model_binary_name
+  ```
 
 2. Upload the package:
-```
-aws s3 cp whisper s3://candlerust
-```
+  ```
+  aws s3 cp whisper s3://candlerust
+  ```
 
-also uploaded the test wav file into s3 
+  also uploaded the test wav file into s3 
 
-```
-cd ../../../../whisper/wav/samples_hp0.wav # Your example folder
-aws s3 cp samples_hp0.wav s3://candlerust
-```
+  ```
+  cd ../../../../whisper/wav/samples_hp0.wav # Your example folder
+  aws s3 cp samples_hp0.wav s3://candlerust
+  ```
 
 
 
