@@ -168,6 +168,9 @@ One way to do inference for Rust Candle is to use the [AWS Deep Learning AMI](ht
 ![Screenshot 2023-08-25 at 4 57 10 PM](https://github.com/nogibjj/rust-candle-demos/assets/58792/6f57943f-7665-48f6-b582-fbc2f7325835)
 
 
+* note that you need to request additional vGPU from AWS, for this specific machine, it's require 64vGPU instance to run. check more information [here](https://aws.amazon.com/blogs/aws/new-ec2-instances-g5-with-nvidia-a10g-tensor-core-gpus/)
+
+
 ### Notes to get NVCC installed
 
 * sudo apt-get install cuda-nvcc-12-2
@@ -182,6 +185,64 @@ ls /usr/local/cuda/lib64/libcublas.so
 ls /usr/local/cuda/lib64/libcublasLt.so
 
 ```
+
+### AWS binary codebuild
+
+
+below is the code to run the whisper model with samples_hp0.wav example 
+
+```
+ cargo run --features cuda --example whisper --release -- --input ../whisper/wav/samples_hp0.wav
+```
+
+### Step 1: Compile the Rust Program Locally
+Run the following command to compile the Rust application. This will generate an executable file under ./target/release/.
+
+```
+cargo build --features cuda --release
+```
+
+or if you wanna build the single LLM, for example whisper
+
+```
+cargo build --features cuda --example whisper --release
+```
+
+and you can run the binary before you process it into s3.
+
+1. Get into the binary forder, usually in "./target/release/examples"
+2. run the following code
+```
+./whisper --input ../../../../whisper/wav/samples_hp0.wav 
+```
+> note the ../../../../whisper/wav/samples_hp0.wav is where the example wav file saved. you can skip this if your test model don't need any test file. 
+
+### Step 3: Upload the Binary to AWS S3
+
+1. Configure AWS CLI:
+```
+aws configure
+```
+
+2. Go to the binary forder:
+```
+cd ./target/release/examples/whisper #Your_model_binary_name
+```
+
+2. Upload the package:
+```
+aws s3 cp whisper s3://candlerust
+```
+
+also uploaded the test wav file into s3 
+
+```
+cd ../../../../whisper/wav/samples_hp0.wav # Your example folder
+aws s3 cp samples_hp0.wav s3://candlerust
+```
+
+
+
 
 ### Potential Development and Deployment Architecture
 
